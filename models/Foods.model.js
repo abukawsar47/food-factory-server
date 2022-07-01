@@ -12,5 +12,9 @@ const foodsSchema = mongoose.Schema({
         type: String,
         require: true,
     },
+    img: {
+        type: URL,
+        require: true,
+    },
 });
 module.exports = mongoose.model("Foods", foodsSchema);
