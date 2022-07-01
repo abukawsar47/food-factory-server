@@ -1,11 +1,10 @@
 const express = require('express');
+const { createNewFood, getAllFoods } = require('../controllers/Foods.controllers');
 
 const router = express.Router()
-router.get('/', (req, res) => {
-    res.status(200).send({ message: "all foods" })
-})
+router.get('/', getAllFoods)
 
-router.post('/',)
+router.post('/', createNewFood)
 
 
 module.exports = router;

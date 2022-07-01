@@ -13,7 +13,7 @@ const foodsSchema = mongoose.Schema({
         require: true,
     },
     img: {
-        type: URL,
+        type: String,
         require: true,
     },
     available: {
@@ -21,4 +21,4 @@ const foodsSchema = mongoose.Schema({
         require: true,
     }
 });
-module.exports = mongoose.model("Foods", foodsSchema);
+module.exports = mongoose.model("Food", foodsSchema);
