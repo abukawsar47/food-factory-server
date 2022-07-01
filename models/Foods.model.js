@@ -16,5 +16,9 @@ const foodsSchema = mongoose.Schema({
         type: URL,
         require: true,
     },
+    available: {
+        type: Number,
+        require: true,
+    }
 });
 module.exports = mongoose.model("Foods", foodsSchema);
