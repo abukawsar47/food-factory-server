@@ -5,4 +5,7 @@ router.get('/', (req, res) => {
     res.status(200).send({ message: "all foods" })
 })
 
+router.post('/',)
+
+
 module.exports = router;
