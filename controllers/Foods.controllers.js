@@ -25,10 +25,9 @@ const getAllFoods = async (req, res) => {
 
 const getOneFood = async (req, res) => {
   try {
-    const food = await Food.findOne({
-      id: mongoose.Schema.ObjectId(id)
-    })
-    res.status(201).send(newFood);
+    const _id = req.params.id;
+    const food = await Food.findOne({ _id })
+    res.status(201).send(food);
   } catch (error) {
     res.status(500).send(error.message);
   }
@@ -38,11 +37,11 @@ const createNewFood = async (req, res) => {
 
   try {
     const newFood = new Food({
-      name: request.body.name,
-      price: Number(request.body.price),
-      description: request.body.description,
-      img: request.body.img,
-      available: Number(request.body.available),
+      name: req.body.name,
+      price: Number(req.body.price),
+      description: req.body.description,
+      img: req.body.img,
+      available: Number(req.body.available),
     })
     await newFood.save();
     res.status(201).send(newFood)
@@ -58,13 +57,10 @@ const deleteFood = async (req, res) => {
     //  const query = {
     //     mongoose.Schema.ObjectId: ObjectId(id)
     //   }
-    Food.deleteOne({
+    await Food.deleteOne({
       id: mongoose.Schema.ObjectId(id)
     })
     res.status(200).send({ message: "all foods here" });
-
-
-
   } catch (error) {
     res.status(500).send(error.message);
   }
