@@ -14,19 +14,6 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/foods', allFoodRouter)
 
 
-/*========================================
-Import User Authentication Route === abu 
-=========================================*/
-
-const authRoute = require('./routes/auth')
-
-
-//Route Middleware
-app.use('/', authRoute);
-
-/*========================================
-Import User Authentication Route === abu 
-=========================================*/
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/./views/index.html")
