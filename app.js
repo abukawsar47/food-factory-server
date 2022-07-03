@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/foods", allFoodRouter);
-app.use("/reviews", allReviewsRouter);
+app.use("/review", allReviewsRouter);
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/./views/index.html");

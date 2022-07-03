@@ -1,4 +1,8 @@
 const express = require("express");
+const {
+    getAllReview,
+    createNewReview,
+} = require("../controllers/reviews.controllers");
 
 const router = express.Router();
 
@@ -6,14 +10,10 @@ const router = express.Router();
 1. GET all reviews
 2. POST new reviews
 */
-router.get("/", (req, res) => {
-    res.send({ message: "Everything is ok" })
-});
-router.post("/", (req, res) => {
-    res.send({ message: "Everything is ok" })
-});
+router.get("/", getAllReview);
+router.post("/", createNewReview);
 router.patch("/", (req, res) => {
-    res.send({ message: "Everything is ok" })
+    res.send({ message: "Everything is ok" });
 });
 
 module.exports = router;
