@@ -11,7 +11,6 @@ const Food = require('../models/Foods.model');
 // const {ObjectId} = require('mongodb');
 const mongoose = require('mongoose');
 
-
 //1. GET all foods 
 
 const getAllFoods = async (req, res) => {
