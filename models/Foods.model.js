@@ -19,6 +19,6 @@ const foodsSchema = mongoose.Schema({
     available: {
         type: Number,
         require: true,
-    }
+    },
 });
 module.exports = mongoose.model("Food", foodsSchema);

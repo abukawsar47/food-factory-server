@@ -6,22 +6,21 @@
 4.DELETE Food By ID
 ===========================Foods API=========================
 */
-const { query } = require('express');
-const Food = require('../models/Foods.model');
+const { query } = require("express");
+const Food = require("../models/Foods.model");
 // const {ObjectId} = require('mongodb');
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-
-//1. GET all foods 
+//1. GET all foods
 
 const getAllFoods = async (req, res) => {
   try {
-    const allFoods = await Food.find({})
-    res.status(200).send(allFoods)
+    const allFoods = await Food.find({});
+    res.status(200).send(allFoods);
   } catch (error) {
     res.status(500).send(error.message);
   }
-}
+};
 
 const getOneFood = async (req, res) => {
   try {
@@ -65,6 +64,13 @@ const deleteFood = async (req, res) => {
     res.status(500).send(error.message);
   }
 }
+
+
+
+
 module.exports = {
-  getAllFoods, createNewFood, getOneFood, deleteFood
-}
+  getAllFoods,
+  createNewFood,
+  getOneFood,
+  deleteFood,
+};
