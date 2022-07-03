@@ -1,5 +1,10 @@
 const express = require('express');
-const { createNewFood, getAllFoods, deleteFood, getOneFood } = require('../controllers/Foods.controllers');
+const {
+    createNewFood,
+    getAllFoods,
+    deleteFood,
+    getOneFood
+} = require('../controllers/Foods.controllers');
 
 const router = express.Router()
 router.get('/', getAllFoods)

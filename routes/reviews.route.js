@@ -1,14 +1,19 @@
-// const express = require("express");
-// const { route } = require("../app");
+const express = require("express");
 
-// const router = express.Router();
+const router = express.Router();
 
-// /*reviews API
-// 1. GET all reviews
-// 2. POST new reviews
-// */
-// router.get("/");
-// router.post("/");
-// router.patch("/");
+/*reviews API
+1. GET all reviews
+2. POST new reviews
+*/
+router.get("/", (req, res) => {
+    res.send({ message: "Everything is ok" })
+});
+router.post("/", (req, res) => {
+    res.send({ message: "Everything is ok" })
+});
+router.patch("/", (req, res) => {
+    res.send({ message: "Everything is ok" })
+});
 
-// module.exports = route;
+module.exports = router;
