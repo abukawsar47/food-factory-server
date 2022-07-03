@@ -12,5 +12,4 @@ router.get('/:id', getOneFood)
 router.post('/', createNewFood)
 router.delete('/:id', deleteFood)
 
-
 module.exports = router;

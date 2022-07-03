@@ -8,10 +8,13 @@
 */
 const { query } = require("express");
 const Food = require("../models/Foods.model");
-// const {ObjectId} = require('mongodb');
 const mongoose = require("mongoose");
 
+
 //1. GET all foods
+
+//1. GET all foods 
+
 
 const getAllFoods = async (req, res) => {
   try {
@@ -52,10 +55,6 @@ const createNewFood = async (req, res) => {
 
 const deleteFood = async (req, res) => {
   try {
-    // const id = req.params.id;
-    //  const query = {
-    //     mongoose.Schema.ObjectId: ObjectId(id)
-    //   }
     await Food.deleteOne({
       id: mongoose.Schema.ObjectId(id)
     })
