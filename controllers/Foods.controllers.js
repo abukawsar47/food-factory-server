@@ -53,6 +53,14 @@ const createNewFood = async (req, res) => {
 
 }
 
+/* const updateFood = async (req, res) => {
+  try {
+
+  } catch (error) {
+    res.status(500).send("Something Wrong Can not updated");
+  }
+} */
+
 const deleteFood = async (req, res) => {
   try {
     await Food.deleteOne({
