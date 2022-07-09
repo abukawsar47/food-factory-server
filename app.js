@@ -4,6 +4,7 @@ require("./config/db");
 
 const allFoodRouter = require("./routes/foodData.route");
 const allReviewsRouter = require("./routes/reviews.route");
+const allEmployeesRouter = require("./routes/employee.route");
 
 const app = express();
 
@@ -13,17 +14,18 @@ app.use(express.json());
 
 app.use("/foods", allFoodRouter);
 app.use("/review", allReviewsRouter);
+app.use("/employee", allEmployeesRouter);
 
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/./views/index.html");
+  res.sendFile(__dirname + "/./views/index.html");
 });
 
 app.use((req, res, next) => {
-    res.status(404).json({ message: "404 route not found" });
+  res.status(404).json({ message: "404 route not found" });
 });
 
 app.use((err, req, res, next) => {
-    res.status(500).json({ message: "500 Something Wrong" });
+  res.status(500).json({ message: "500 Something Wrong" });
 });
 
 module.exports = app;

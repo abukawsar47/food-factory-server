@@ -1,9 +1,9 @@
 const app = require("./app");
 
-const config = require("./config/config")
+const config = require("./config/config");
 
 const port = config.app.port;
 
 app.listen(port, () => {
-    console.log(`app is running at https://localhost:${port}`)
-})
+  console.log(`app is running at https://localhost:${port}`);
+});

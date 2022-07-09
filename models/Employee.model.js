@@ -1,14 +1,18 @@
 const mongoose = require("mongoose");
-const foodsSchema = mongoose.Schema({
+const employeeSchema = mongoose.Schema({
   name: {
     type: String,
     require: true,
   },
-  price: {
+  number: {
     type: Number,
     require: true,
   },
-  description: {
+  email: {
+    type: String,
+    require: true,
+  },
+  role: {
     type: String,
     require: true,
   },
@@ -16,9 +20,5 @@ const foodsSchema = mongoose.Schema({
     type: String,
     require: true,
   },
-  available: {
-    type: Number,
-    require: true,
-  },
 });
-module.exports = mongoose.model("Food", foodsSchema);
+module.exports = mongoose.model("Employee", employeeSchema);
