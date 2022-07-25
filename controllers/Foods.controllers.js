@@ -6,15 +6,11 @@
 4.DELETE Food By ID
 ===========================Foods API=========================
 */
-const { query } = require("express");
+const {} = require("express");
 const Food = require("../models/Foods.model");
 const mongoose = require("mongoose");
 
-
 //1. GET all foods
-
-//1. GET all foods 
-
 
 const getAllFoods = async (req, res) => {
   try {
@@ -28,15 +24,14 @@ const getAllFoods = async (req, res) => {
 const getOneFood = async (req, res) => {
   try {
     const _id = req.params.id;
-    const food = await Food.findOne({ _id })
+    const food = await Food.findOne({ _id });
     res.status(201).send(food);
   } catch (error) {
     res.status(500).send(error.message);
   }
-}
+};
 
 const createNewFood = async (req, res) => {
-
   try {
     const newFood = new Food({
       name: req.body.name,
@@ -44,14 +39,13 @@ const createNewFood = async (req, res) => {
       description: req.body.description,
       img: req.body.img,
       available: Number(req.body.available),
-    })
+    });
     await newFood.save();
-    res.status(201).send(newFood)
+    res.status(201).send(newFood);
   } catch (error) {
     res.status(500).send("Something Wrong");
   }
-
-}
+};
 
 /* const updateFood = async (req, res) => {
   try {
@@ -64,16 +58,13 @@ const createNewFood = async (req, res) => {
 const deleteFood = async (req, res) => {
   try {
     await Food.deleteOne({
-      id: mongoose.Schema.ObjectId(id)
-    })
+      id: mongoose.Schema.ObjectId(id),
+    });
     res.status(200).send({ message: "all foods here" });
   } catch (error) {
     res.status(500).send(error.message);
   }
-}
-
-
-
+};
 
 module.exports = {
   getAllFoods,

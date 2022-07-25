@@ -1,18 +1,10 @@
 const mongoose = require("mongoose");
-const employeeSchema = mongoose.Schema({
+const reviewsSchema = mongoose.Schema({
+  productId: {
+    type: String,
+    require: true,
+  },
   name: {
-    type: String,
-    require: true,
-  },
-  number: {
-    type: Number,
-    require: true,
-  },
-  email: {
-    type: String,
-    require: true,
-  },
-  role: {
     type: String,
     require: true,
   },
@@ -20,7 +12,23 @@ const employeeSchema = mongoose.Schema({
     type: String,
     require: true,
   },
-  consumer: {
+  price: {
+    type: Number,
+    require: true,
+  },
+  address: {
+    type: String,
+    require: true,
+  },
+  number: {
+    type: Number,
+    require: true,
+  },
+  orderQuantity: {
+    type: Number,
+    require: true,
+  },
+  consumerEmail: {
     type: String,
     require: true,
   },
@@ -29,4 +37,4 @@ const employeeSchema = mongoose.Schema({
     require: true,
   },
 });
-module.exports = mongoose.model("Employee", employeeSchema);
+module.exports = mongoose.model("Order", reviewsSchema);

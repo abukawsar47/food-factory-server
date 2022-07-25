@@ -5,6 +5,7 @@ require("./config/db");
 const allFoodRouter = require("./routes/foodData.route");
 const allReviewsRouter = require("./routes/reviews.route");
 const allEmployeesRouter = require("./routes/employee.route");
+const allOrdersRouter = require("./routes/orders.route");
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use("/foods", allFoodRouter);
 app.use("/review", allReviewsRouter);
 app.use("/employee", allEmployeesRouter);
+app.use("/order", allOrdersRouter);
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/./views/index.html");
